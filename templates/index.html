@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Thuat toan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Cột bên trái -->
+            <div class="col-md-6">
+                <div style="margin: 40px;">
+                    <h1>4_Spachs 2018 Algorithm</h1>
+                    <p>Improved capacity Arabic text watermarking methods based on open word space</p>
+                    <div style="margin-bottom: 20px; margin-top: 40px;">
+                        <h4>Cover Text</h4>
+                        <input class="form-control" type="text" id="coverText_4_spachs_input" placeholder="cover text">
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h4>Bit Input (4_Spachs require watermark type is bit)</h4>
+                        <input class="form-control" type="text" id="watermark_4_spachs_input" placeholder="watermark bits">
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h4>CoverText-Watermarked Result</h4>
+                        <input class="form-control" type="text" id="coverText_4_spachs_result">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn_embed_4_spachs">Embed</button>
+            
+                    <div style="margin-top: 30px;">
+                        <h4>Extract</h4>
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extract_4Spach_input" placeholder="cover text watermarked">
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extract_4Spach_result" placeholder="watermark">
+            
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn_extract_4_spachs">Extract</button>
+                </div>
+            </div>
+            <!-- Cột bên phải -->
+            <div class="col-md-6">
+                <div style="margin: 40px;">
+                    <h1>Proposed Method</h1>
+                    <p></p>
+                    <div style="margin-bottom: 20px; margin-top: 40px;">
+                        <h4>Cover Text</h4>
+                        <input class="form-control" type="text" id="cover_text_proposed_input">
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h4>Watermark</h4>
+                        <input class="form-control" type="text" id="watermark_proposed_input">
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h4>CoverText-Watermarked Result</h4>
+                        <input class="form-control" type="text" id="watermark_proposed_result">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn_embed_proposed_method">embed</button>
+            
+                    <div style="margin-top: 30px;">
+                        <h4>Extract</h4>
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extractProposedInput" placeholder="watermark">
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extractProposedResult" placeholder="Hiển thị kết quả">
+                        
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn_extract_proposed">Extract</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div style="margin: 40px;">
+                    <h1>ANiTW 2019 Algorithm</h1>
+                    <p>ANiTW: A Novel Intelligent Text Watermarking technique for forensic
+                        identification of spurious information on social media</p>
+                    <div style="margin-bottom: 20px; margin-top: 40px;">
+                        <h4>Cover Text</h4>
+                        <input class="form-control" type="text" id="cover_text_anitw_input" placeholder="cover text">
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h4>Watermark</h4>
+                        <input class="form-control" type="text" id="watermark_anitw_input" placeholder="watermark">
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h4>CoverText-Watermarked Result</h4>
+                        <input class="form-control" type="text" id="watermark_anitw_result">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn_embed_anitw">Embed</button>
+            
+                    <div style="margin-top: 30px;">
+                        <h4>Extract</h4>
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extract_anitw_input" placeholder="Đưa đoạn văn watermark">
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extact_anitw_result" placeholder="Hiển thị kết quả">
+    
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn_extract_anitw">Extract</button>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div style="margin: 40px;">
+                    <h1>AITSteg Algorithm 2018</h1>
+                    <p>AITSteg: An Innovative Text Steganography Technique for Hidden Transmission of Text Message via Social Media
+                    </p>
+                    <div style="margin-bottom: 20px; margin-top: 40px;">
+                        <h4>Cover Text</h4>
+                        <input class="form-control" type="text" id="cover_text_AITSteg_input" placeholder="cover text">
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h4>Watermark</h4>
+                        <input class="form-control" type="text" id="watermark_AITSteg_input" placeholder="watermark">
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h4>Key</h4>
+                        <input class="form-control" type="text" id="watermark_AITSteg_key" placeholder="Key">
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h4>CoverText-Watermarked Result</h4>
+                        <input class="form-control" type="text" id="watermark_AITSteg_result" placeholder="Hiển thị kết quả">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn_embed_AITSteg_method">embed</button>
+            
+                    <div style="margin-top: 30px;">
+                        <h4>Extract</h4>
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extractAITStegInput" placeholder="watermarked Text">
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extractAITStegInputKey" placeholder="key">
+
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extractAITStegResult" placeholder="Hiển thị kết quả">
+                        
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn_extract_AITSteg">Extract</button>
+                </div>
+            </div>
+
+        </div>
+    </div> 
+</body>
+    <script>
+        // 4 Spach
+        let coverText4SpachsInput = document.querySelector("#coverText_4_spachs_input");
+        let watermarkText4SpachInput = document.querySelector("#watermark_4_spachs_input");
+        let watermark4SpachResult = document.querySelector('#coverText_4_spachs_result');
+        let btnEmbed4Spach = document.querySelector("#btn_embed_4_spachs");
+
+        let extract4SpachInput = document.querySelector("#extract_4Spach_input");
+        let extract4SpachResult = document.querySelector("#extract_4Spach_result");
+        let btnExtract4Spach = document.querySelector("#btn_extract_4_spachs");
+
+        // proposed
+        let coverTextProposedInput = document.querySelector("#cover_text_proposed_input");
+        let watermarkProposedInput = document.querySelector("#watermark_proposed_input");
+        let watermarkProposedResult = document.querySelector("#watermark_proposed_result");
+        let btnEmbedProposedMethod = document.querySelector("#btn_embed_proposed_method");
+        let extractProposedInput = document.querySelector("#extractProposedInput");
+        let extractProposedResult = document.querySelector("#extractProposedResult");
+        let btnExtractProposed = document.querySelector("#btn_extract_proposed");
+
+        // anitw
+        let coverTextANITWInput = document.querySelector("#cover_text_anitw_input");
+        let watermarkANITWInput = document.querySelector("#watermark_anitw_input");
+        let watermarkANITWResult = document.querySelector("#watermark_anitw_result");
+
+        let extractANITWInput = document.querySelector("#extract_anitw_input");
+        let extractANITWResult = document.querySelector("#extact_anitw_result");
+
+        let btnEmbedANITW = document.querySelector("#btn_embed_anitw");
+        let btnExtractANITW = document.querySelector("#btn_extract_anitw");
+
+        // AITSteg
+        let coverTextAITStegInput = document.querySelector("#cover_text_AITSteg_input");
+        let watermarkAITStegInput = document.querySelector("#watermark_AITSteg_input");
+        let watermarkAITStegKey = document.querySelector("#watermark_AITSteg_key");
+        let watermarkAITStegResult = document.querySelector("#watermark_AITSteg_result");
+
+        let extractAITStegInput = document.querySelector("#extractAITStegInput");
+        let extractAITStegResult = document.querySelector("#extractAITStegResult");
+        let extractAITStegInputKey = document.querySelector("#extractAITStegInputKey");
+
+        let btnEmbedAITSteg = document.querySelector("#btn_embed_AITSteg_method");
+        let btnExtractAITSteg = document.querySelector("#btn_extract_AITSteg");
+
+
+        class WatermarkAPI {
+            constructor(coverText, watermark, url, buttonDOM, resultDOM, key){
+                this.coverText = coverText;
+                this.watermark = watermark;
+                this.url = url;
+                this.buttonDOM = buttonDOM;
+                this.resultDOM = resultDOM;
+                this.key = key;
+            }
+            
+            embedleAPI(){
+                this.buttonDOM.addEventListener("click", () => {
+                    fetch(this.url, {
+                        method: "POST",
+                        body: JSON.stringify({
+                        coverText: this.coverText.value,
+                        watermark: this.watermark.value,
+                        }),
+                        headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                        return response.json(); // Parse response thành JSON
+                    }).then(data => {
+                            console.log('Dữ liệu nhận được:', data);
+                            this.resultDOM.value = data.result;
+                        })
+                        .catch(error => {
+                            console.error('Có lỗi xảy ra:', error);
+                        });
+                    })
+            }
+            extractAPI(){
+                this.buttonDOM.addEventListener("click", () => {
+                    fetch(this.url, {
+                        method: "POST",
+                        body: JSON.stringify({
+                        coverText: this.coverText.value,
+                        }),
+                        headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                        return response.json(); // Parse response thành JSON
+                    }).then(data => {
+                            console.log('Dữ liệu nhận được:', data);
+                            this.resultDOM.value = data.result;
+                        })
+                        .catch(error => {
+                            console.error('Có lỗi xảy ra:', error);
+                        });
+                    })
+            }
+            embedAITStegAPI(){
+                this.buttonDOM.addEventListener("click", () => {
+                    fetch(this.url, {
+                        method: "POST",
+                        body: JSON.stringify({
+                        coverText: this.coverText.value,
+                        watermark: this.watermark.value,
+                        key: this.key.value
+                        }),
+                        headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                        return response.json(); // Parse response thành JSON
+                    }).then(data => {
+                            console.log('Dữ liệu nhận được:', data);
+                            this.resultDOM.value = data.result;
+                        })
+                        .catch(error => {
+                            console.error('Có lỗi xảy ra:', error);
+                        });
+                    })
+            }              
+            extractAITStegAPI(){
+                this.buttonDOM.addEventListener("click", () => {
+                    fetch(this.url, {
+                        method: "POST",
+                        body: JSON.stringify({
+                        coverText: this.coverText.value,
+                        key: this.key.value
+                        }),
+                        headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                        return response.json(); // Parse response thành JSON
+                    }).then(data => {
+                            console.log('Dữ liệu nhận được:', data);
+                            this.resultDOM.value = data.result;
+                        })
+                        .catch(error => {
+                            console.error('Có lỗi xảy ra:', error);
+                        });
+                    })
+            }
+        }
+        
+
+        let spachsEmbed = new WatermarkAPI(coverText4SpachsInput, watermarkText4SpachInput, "http://localhost:5000/4_Spach_embed", btnEmbed4Spach, watermark4SpachResult, null);
+        spachsEmbed.embedleAPI();
+        let spachsExtract = new WatermarkAPI(extract4SpachInput, null, "http://localhost:5000/4_Spach_extract", btnExtract4Spach, extract4SpachResult, null)
+        spachsExtract.extractAPI();
+
+        let proposedEmbed = new WatermarkAPI(coverTextProposedInput, watermarkProposedInput, "http://localhost:5000/proposed_embed", btnEmbedProposedMethod, watermarkProposedResult, null);
+        proposedEmbed.embedleAPI();
+        let proposedExtract = new WatermarkAPI(extractProposedInput, null, "http://localhost:5000/proposed_extract", btnExtractProposed, extractProposedResult, null);
+        proposedExtract.extractAPI();
+
+        let anitwEmbed = new WatermarkAPI(coverTextANITWInput, watermarkANITWInput, "http://localhost:5000/ANITW_embed", btnEmbedANITW, watermarkANITWResult, null);
+        anitwEmbed.embedleAPI();
+        let anitwExtract = new WatermarkAPI(extractANITWInput, null, "http://localhost:5000/ANITW_extract", btnExtractANITW, extractANITWResult, null);
+        anitwExtract.extractAPI();
+
+        let AITStegEmbed = new WatermarkAPI(coverTextAITStegInput, watermarkAITStegInput, "http://localhost:5001/hide", btnEmbedAITSteg, watermarkAITStegResult, watermarkAITStegKey);
+        AITStegEmbed.embedAITStegAPI();
+        let AITStegExtract = new WatermarkAPI(extractAITStegInput, null, "http://localhost:5001/reveal", btnExtractAITSteg, extractAITStegResult, extractAITStegInputKey);
+        AITStegExtract.extractAITStegAPI();
+
+        
+        
+        
+        
+    </script>
+</html>
+
+
