@@ -9,115 +9,115 @@
 <body>
     <div class="container">
         <div class="row">
+            <h1>Upload Excel File</h1>
+            <form action="upload" method="post" enctype="multipart/form-data" id="uploadForm">
+              <input id="fileInput" type="file" name="excelFile" accept=".xlsx,.xls">
+              <button type="submit">Upload</button>
+            </form>
             <!-- Cột bên trái -->
             <div class="col-md-6">
                 <div style="margin: 40px;">
-                    <h1>4_Spachs 2018 Algorithm</h1>
-                    <p>Improved capacity Arabic text watermarking methods based on open word space</p>
+                    <h1>Thuật toán 4_Spachs</h1>
                     <div style="margin-bottom: 20px; margin-top: 40px;">
-                        <h4>Cover Text</h4>
-                        <input class="form-control" type="text" id="coverText_4_spachs_input" placeholder="cover text">
+                        <h4>Văn bản che phủ</h4>
+                        <input class="form-control" type="text" id="coverText_4_spachs_input">
                     </div>
                     <div style="margin-bottom: 30px;">
-                        <h4>Bit Input (4_Spachs require watermark type is bit)</h4>
-                        <input class="form-control" type="text" id="watermark_4_spachs_input" placeholder="watermark bits">
+                        <h4>Mã bit</h4>
+                        <input class="form-control" type="text" id="watermark_4_spachs_input">
                     </div>
                     <div style="margin-bottom: 30px;">
-                        <h4>CoverText-Watermarked Result</h4>
+                        <h4>Kết quả</h4>
                         <input class="form-control" type="text" id="coverText_4_spachs_result">
                     </div>
-                    <button type="button" class="btn btn-primary" id="btn_embed_4_spachs">Embed</button>
+                    <button type="button" class="btn btn-primary" id="btn_embed_4_spachs">Nhúng</button>
             
                     <div style="margin-top: 30px;">
-                        <h4>Extract</h4>
-                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extract_4Spach_input" placeholder="cover text watermarked">
-                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extract_4Spach_result" placeholder="watermark">
+                        <h4>Trích xuất</h4>
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extract_4Spach_input">
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extract_4Spach_result">
             
                     </div>
-                    <button type="button" class="btn btn-primary" id="btn_extract_4_spachs">Extract</button>
+                    <button type="button" class="btn btn-primary" id="btn_extract_4_spachs">Trích xuất</button>
                 </div>
             </div>
             <!-- Cột bên phải -->
             <div class="col-md-6">
                 <div style="margin: 40px;">
-                    <h1>Proposed Method</h1>
+                    <h1>Thuật toán đề xuất</h1>
                     <p></p>
                     <div style="margin-bottom: 20px; margin-top: 40px;">
-                        <h4>Cover Text</h4>
+                        <h4>Văn bản che phủ</h4>
                         <input class="form-control" type="text" id="cover_text_proposed_input">
                     </div>
                     <div style="margin-bottom: 30px;">
-                        <h4>Watermark</h4>
+                        <h4>Thủy vân số</h4>
                         <input class="form-control" type="text" id="watermark_proposed_input">
                     </div>
                     <div style="margin-bottom: 30px;">
-                        <h4>CoverText-Watermarked Result</h4>
+                        <h4>Kết quả</h4>
                         <input class="form-control" type="text" id="watermark_proposed_result">
                     </div>
-                    <button type="button" class="btn btn-primary" id="btn_embed_proposed_method">embed</button>
+                    <button type="button" class="btn btn-primary" id="btn_embed_proposed_method">Nhúng</button>
             
                     <div style="margin-top: 30px;">
-                        <h4>Extract</h4>
-                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extractProposedInput" placeholder="watermark">
-                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extractProposedResult" placeholder="Hiển thị kết quả">
+                        <h4>Trích xuất</h4>
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extractProposedInput">
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extractProposedResult" >
                         
                     </div>
-                    <button type="button" class="btn btn-primary" id="btn_extract_proposed">Extract</button>
+                    <button type="button" class="btn btn-primary" id="btn_extract_proposed">Trích xuất</button>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div style="margin: 40px;">
-                    <h1>ANiTW 2019 Algorithm</h1>
-                    <p>ANiTW: A Novel Intelligent Text Watermarking technique for forensic
-                        identification of spurious information on social media</p>
+                    <h1>Thuật toán ANiTW 1.0</h1>
                     <div style="margin-bottom: 20px; margin-top: 40px;">
-                        <h4>Cover Text</h4>
-                        <input class="form-control" type="text" id="cover_text_anitw_input" placeholder="cover text">
+                        <h4>Văn bản che phủ</h4>
+                        <input class="form-control" type="text" id="cover_text_anitw_input">
                     </div>
                     <div style="margin-bottom: 30px;">
-                        <h4>Watermark</h4>
-                        <input class="form-control" type="text" id="watermark_anitw_input" placeholder="watermark">
+                        <h4>Thủy vân số</h4>
+                        <input class="form-control" type="text" id="watermark_anitw_input">
                     </div>
                     <div style="margin-bottom: 30px;">
-                        <h4>CoverText-Watermarked Result</h4>
+                        <h4>Kết quả</h4>
                         <input class="form-control" type="text" id="watermark_anitw_result">
                     </div>
-                    <button type="button" class="btn btn-primary" id="btn_embed_anitw">Embed</button>
+                    <button type="button" class="btn btn-primary" id="btn_embed_anitw">Nhúng</button>
             
                     <div style="margin-top: 30px;">
-                        <h4>Extract</h4>
-                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extract_anitw_input" placeholder="Đưa đoạn văn watermark">
-                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extact_anitw_result" placeholder="Hiển thị kết quả">
+                        <h4>Trích xuất</h4>
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extract_anitw_input">
+                        <input style="margin-bottom: 30px;" class="form-control" type="text" id="extact_anitw_result">
     
                     </div>
-                    <button type="button" class="btn btn-primary" id="btn_extract_anitw">Extract</button>
+                    <button type="button" class="btn btn-primary" id="btn_extract_anitw">Trích xuất</button>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div style="margin: 40px;">
-                    <h1>AITSteg Algorithm 2018</h1>
-                    <p>AITSteg: An Innovative Text Steganography Technique for Hidden Transmission of Text Message via Social Media
-                    </p>
+                    <h1>Thuật toán AITSteg</h1>
                     <div style="margin-bottom: 20px; margin-top: 40px;">
-                        <h4>Cover Text</h4>
-                        <input class="form-control" type="text" id="cover_text_AITSteg_input" placeholder="cover text">
+                        <h4>Văn bản che phủ</h4>
+                        <input class="form-control" type="text" id="cover_text_AITSteg_input" >
                     </div>
                     <div style="margin-bottom: 30px;">
-                        <h4>Watermark</h4>
-                        <input class="form-control" type="text" id="watermark_AITSteg_input" placeholder="watermark">
+                        <h4>Thủy vân số</h4>
+                        <input class="form-control" type="text" id="watermark_AITSteg_input" >
                     </div>
                     <div style="margin-bottom: 30px;">
-                        <h4>Key</h4>
-                        <input class="form-control" type="text" id="watermark_AITSteg_key" placeholder="Key">
+                        <h4>Khóa</h4>
+                        <input class="form-control" type="text" id="watermark_AITSteg_key">
                     </div>
                     <div style="margin-bottom: 30px;">
-                        <h4>CoverText-Watermarked Result</h4>
-                        <input class="form-control" type="text" id="watermark_AITSteg_result" placeholder="Hiển thị kết quả">
+                        <h4>Kết quả</h4>
+                        <input class="form-control" type="text" id="watermark_AITSteg_result" >
                     </div>
-                    <button type="button" class="btn btn-primary" id="btn_embed_AITSteg_method">embed</button>
+                    <button type="button" class="btn btn-primary" id="btn_embed_AITSteg_method">Nhúng</button>
             
                     <div style="margin-top: 30px;">
                         <h4>Extract</h4>
@@ -178,7 +178,7 @@
         let btnEmbedAITSteg = document.querySelector("#btn_embed_AITSteg_method");
         let btnExtractAITSteg = document.querySelector("#btn_extract_AITSteg");
 
-
+           
         class WatermarkAPI {
             constructor(coverText, watermark, url, buttonDOM, resultDOM, key){
                 this.coverText = coverText;

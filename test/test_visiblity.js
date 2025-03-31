@@ -109,6 +109,8 @@ function jaro_distance(s1, s2)
         return jaro_dist.toFixed(6);
     }
 
+    
+
 module.exports = {
     jaro_distance,
     jaro_Winkler

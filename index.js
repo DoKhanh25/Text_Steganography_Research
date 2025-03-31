@@ -6,14 +6,109 @@ const Spachs = require('./watermark/4_Spachs.js');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const ProposedMethod = require('./watermark/Propose_Method.js');
+const { log } = require('console');
 const PORT = 5000
 const jaroWinklerDistance = require('./test/test_visiblity.js').jaro_Winkler;
 const jaroDistance = require('./test/test_visiblity.js').jaro_distance;
+const multer = require('multer');
+const ExcelJS = require('exceljs');
+const fs = require('fs');
+const fineGrain = require('./watermark/Fine_grain.js');
+const AniTW_2023 = require('./watermark/ANTW_2023_NEW.js');
+const AITSteg = require('./watermark/AITSteg.js');
+const testAITSteg = require('./test/test_Robut.js');
+const testCapacityANiTW = require('./test/test_capacity_ANiTW.js');
+const testCapacity = require('./test/test_capacity.js');
+const testCapacity4Spach = require('./test/test_capacity_4Spach.js');
+const testCapacityFineGrain = require('./test/test_capacity_Fine-grain.js');
+const testCapacityANiTW2 = require('./test/test_capacity_ANiTW2.js');
+const testCapacityProposed = require('./test/test_capacity_Propose.js');
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/');
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname));
+  }
+});
+
+// Kiểm tra nếu thư mục uploads chưa tồn tại thì tạo mới
+if (!fs.existsSync('uploads')) {
+  fs.mkdirSync('uploads');
+}
+
+const upload = multer({ storage: storage });
 
 app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+
+// Xử lý upload file
+app.post('/upload', upload.single('excelFile'), async (req, res) => {
+  if (!req.file) {
+    return res.status(400).send('Không có file nào được upload');
+  }
+
+  try {
+    const filePath = req.file.path;
+    
+    // Đọc file excel
+    const workbook = new ExcelJS.Workbook();
+    await workbook.xlsx.readFile(filePath);
+    
+    // Lấy sheet đầu tiên
+    const worksheet = workbook.getWorksheet(1);
+    
+    // Mảng để lưu dữ liệu từ cột B (từ dòng 2 đến dòng 11)
+    const columnBData = [];
+    rsC = [];
+    
+    // Lặp qua các dòng từ 2 đến 11
+    for (let i = 2; i <= 11; i++) {
+      const cell = worksheet.getCell(`B${i}`);
+      columnBData.push({
+        row: i,
+        value: cell.value
+      });
+
+      // let watermark = '11201933';
+
+      // let rs = AITSteg.embedMessage(watermark, cell.value , "12:15");
+      // rsC.push(rs)
+      // console.log(jaroDistance(cell.value, rs))
+
+      // testAITSteg.calculateTheoreticalRobustness(cell.value, "11201933");
+      
+      let result = testCapacityFineGrain.calculateEmbeddingCapacity(cell.value);
+      
+      console.log(result.w);
+      // console.log(result.EC);
+      // console.log("Dung tích nhúng (EC) - số byte có thể giấu:", result.EC / 8);
+      // console.log(result.textLength);
+
+    }
+
+
+    
+
+    // Xóa file sau khi xử lý xong
+    fs.unlinkSync(filePath);
+    
+    // Trả về kết quả
+    res.json({
+      message: 'Xử lý file thành công',
+      data: columnBData,
+      data2: rsC
+    });
+    
+  } catch (error) {
+    console.error('Lỗi:', error);
+    res.status(500).send('Đã xảy ra lỗi khi xử lý file Excel');
+  }
+});
 
 
 app.get("/",  (req, res) => {
@@ -65,7 +160,8 @@ app.post("/proposed_embed", (req, res) => {
       result: "undefine or null value"
     })
   }
-  let result = ProposedMethod.Embed(coverText, watermark);
+  let result = ANiTW_2019.embedWatermark(coverText, watermark);
+  console.log(jaroDistance(coverText, result))
 
   return res.json({
     result: result

@@ -1,27 +1,39 @@
-// Hàm tính khả năng nhúng (Embedding Capacity)
-function calculateEmbeddingCapacity(BPL, CPL, EL, useBitsPerLocation = true) {
-    if (useBitsPerLocation) {
-        // Sử dụng số bit trên mỗi vị trí
-        return BPL * EL;
-    } else {
-        // Sử dụng số ký tự trên mỗi vị trí
-        return CPL * EL;
-    }
+function calculateAvgWordLength(text) {
+    // Loại bỏ dấu câu để chỉ tính ký tự trong từ
+    let cleanText = text.replace(/[.,!?;:"'(){}\[\]-]/g, "");
+    
+    // Tách từ bằng khoảng trắng
+    let words = cleanText.split(/\s+/).filter(word => word.length > 0);
+    
+    // Tổng số ký tự (không tính khoảng trắng)
+    let totalChars = words.reduce((sum, word) => sum + word.length, 0);
+
+    // Tính avgWordLength
+    return words.length > 0 ? (totalChars / words.length) : 0;
 }
 
-// Ví dụ sử dụng:
-// BPL: số bit trên mỗi vị trí
-// CPL: số ký tự trên mỗi vị trí
-// EL: số lượng vị trí có thể nhúng
 
-const BPL = 2;  // Số bit trên mỗi vị trí
-const CPL = 1;  // Số ký tự trên mỗi vị trí
-const EL = 100; // Số lượng vị trí có thể nhúng
+function calculateEL(textLength, avgWordLength = 5) {
+    // Số lượng vị trí có thể nhúng = tổng số ký tự / (độ dài từ trung bình + 1)
+    return Math.floor(textLength / (avgWordLength + 1));
+}
 
-// Tính EC dựa trên BPL
-const EC_BPL = calculateEmbeddingCapacity(BPL, CPL, EL, true);
-console.log(`Embedding Capacity (dựa trên BPL): ${EC_BPL} bits`);
+function calculateEC(textLength, text, bpl = 2) {
+    let avgWordLength = calculateAvgWordLength(text);
+    let EL = calculateEL(textLength, avgWordLength);
+    return {
+        textLength,
+        EL: EL,
+        EC: EL * bpl
+    };
+}
 
-// Tính EC dựa trên CPL
-const EC_CPL = calculateEmbeddingCapacity(BPL, CPL, EL, false);
-console.log(`Embedding Capacity (dựa trên CPL): ${EC_CPL} characters`);
+
+
+
+
+
+
+module.exports = {
+    calculateEC
+};
